@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,26 +9,26 @@ namespace FlightManagementSystem.Models
     [Table("TblAdminLogin")]
     public class AdminLogin
     {
-       
-   [Key]
+
+        [Key]
         public int AdminId { get; set; }
-        [Required(ErrorMessage ="User Name Required")]
-        [Display(Name ="User Name")]
-        [MinLength(5, ErrorMessage = "Minimum 3 char Required"), MaxLength(10, ErrorMessage = "Maximum 10 char Required")] 
+        [Required(ErrorMessage = "User Name Required")]
+        [Display(Name = "User Name")]
+        [MinLength(5, ErrorMessage = "Minimum 3 char Required"), MaxLength(10, ErrorMessage = "Maximum 10 char Required")]
         public string Adminname { get; set; }
 
         [Required(ErrorMessage = "Password Required")]
         [DataType(DataType.Password)]
-        [MinLength(5,ErrorMessage ="Minimum 5 char Required"),MaxLength(10, ErrorMessage = "Maximum 10 char Required")]
+        [MinLength(5, ErrorMessage = "Minimum 5 char Required"), MaxLength(10, ErrorMessage = "Maximum 10 char Required")]
         public string Password { get; set; }
 
     }
     [Table("TblUserAccount")]
     public class UserAccount
     {
-       [Key] public int UserId { get; set; }
+        [Key] public int UserId { get; set; }
 
-        [Display(Name ="first name")]
+        [Display(Name = "first name")]
         [Required(ErrorMessage = "FirstName Required")]
         [MinLength(5, ErrorMessage = "Minimum 5 char Required"), MaxLength(20, ErrorMessage = "Maximum 20 char Required")]
         public string FirstName { get; set; }
@@ -43,8 +40,8 @@ namespace FlightManagementSystem.Models
 
         [Display(Name = "Email")]
         [Required(ErrorMessage = "EmailId Required")]
-        [MinLength(5, ErrorMessage = "Minimum 5 char Required"), MaxLength(20, ErrorMessage = "Maximum 30 char Required")] 
-       [DataType(DataType.EmailAddress)]
+        [MinLength(5, ErrorMessage = "Minimum 5 char Required"), MaxLength(10, ErrorMessage = "Maximum 20 char Required")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Display(Name = "UserName")]
@@ -59,18 +56,18 @@ namespace FlightManagementSystem.Models
         public string Password { get; set; }
 
         [Display(Name = "ConfirmPassword")]
-        [Compare("Password",ErrorMessage ="Password does'nt Match")]
+        [Compare("Password", ErrorMessage = "Password does'nt Match")]
         [MinLength(5, ErrorMessage = "Minimum 5 char Required"), MaxLength(20, ErrorMessage = "Maximum 10 char Required")]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
 
-        [Display(Name = "LastName")]
+        [Display(Name = "Age")]
         [Required(ErrorMessage = "Age Required")]
-        [Range(18,120,ErrorMessage ="Minimum 18 years should book")]
+        [Range(18, 120, ErrorMessage = "Minimum 18 years should book")]
         public int Age { get; set; }
 
         [Display(Name = "Phone No")]
-        [Required(ErrorMessage = "PhoneNo Required"),RegularExpression(@"^([0-9]{11})$",ErrorMessage ="Phone no is not Valid")]
+        [Required(ErrorMessage = "PhoneNo Required"), RegularExpression(@"^([0-9]{11})$", ErrorMessage = "Phone no is not Valid")]
         [StringLength(11)]
         public string PhoneNo { get; set; }
 
@@ -93,7 +90,7 @@ namespace FlightManagementSystem.Models
 
             [Required(ErrorMessage = "SeatingCapacity Required")]
             [Display(Name = "Seating Capacity")]
-            
+
             public int SeatingCapacity { get; set; }
 
             [Required(ErrorMessage = "Price Required")]
@@ -111,7 +108,7 @@ namespace FlightManagementSystem.Models
 
             [Required(ErrorMessage = "From City Required")]
             [Display(Name = "From City")]
-            [StringLength(40,ErrorMessage ="Max 40 Char Allowed")]
+            [StringLength(40, ErrorMessage = "Max 40 Char Allowed")]
 
             public string From { get; set; }
 
@@ -136,7 +133,7 @@ namespace FlightManagementSystem.Models
             [StringLength(25)]
             public string SeatType { get; set; }
         }
-        
+
 
     }
 }

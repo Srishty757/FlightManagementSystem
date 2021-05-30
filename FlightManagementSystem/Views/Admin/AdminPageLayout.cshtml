@@ -1,0 +1,150 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="js/chartinator.js"></script>
+    <link href="~/Shared/AdminLogin/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Shared/AdminLogin/css/style.css" rel="stylesheet" />
+    <link href="~/Shared/AdminLogin/css/demo-page.css" rel="stylesheet" />
+    <link href="~/Shared/AdminLogin/css/examples.css" rel="stylesheet" />
+    <link href="~/Shared/AdminLogin/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Shared/AdminLogin/css/geochart.css" rel="stylesheet" />
+    <link href="~/Shared/AdminLogin/css/hover.css" rel="stylesheet" />
+    <link href="~/Shared/AdminLogin/css/magnific-popup.css" rel="stylesheet" />
+    
+
+    <script type="text/javascript">
+        jQuery(function ($) {
+
+            var chart3 = $('#geoChart').chartinator({
+                tableSel: '.geoChart',
+
+                columns: [{ role: 'tooltip', type: 'string' }],
+
+                colIndexes: [2],
+
+                rows: [
+                    ['China - 2015'],
+                    ['Colombia - 2015'],
+                    ['France - 2015'],
+                    ['Italy - 2015'],
+                    ['Japan - 2015'],
+                    ['Kazakhstan - 2015'],
+                    ['Mexico - 2015'],
+                    ['Poland - 2015'],
+                    ['Russia - 2015'],
+                    ['Spain - 2015'],
+                    ['Tanzania - 2015'],
+                    ['Turkey - 2015']],
+
+                ignoreCol: [2],
+
+                chartType: 'GeoChart',
+
+                chartAspectRatio: 1.5,
+
+                chartZoom: 1.75,
+
+                chartOffset: [-12, 0],
+
+                chartOptions: {
+
+                    width: null,
+
+                    backgroundColor: '#fff',
+
+                    datalessRegionColor: '#F5F5F5',
+
+                    region: 'world',
+
+                    resolution: 'countries',
+
+                    legend: 'none',
+
+                    colorAxis: {
+
+                        colors: ['#679CCA', '#337AB7']
+                    },
+                    tooltip: {
+
+                        trigger: 'focus',
+
+                        isHtml: true
+                    }
+                }
+
+
+            });
+        });
+    </script>
+    <!--geo chart-->
+    <!--skycons-icons-->
+    <script src="js/skycons.js"></script>
+</head>
+
+<!--slider menu-->
+<body>
+    <div class="sidebar-menu">
+        <div class="logo">
+            <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#">
+                <span id="logo"></span>
+            </a>
+        </div>
+        <div class="menu">
+            <ul id="menu">
+                <li>@Html.ActionLink("Admin", "Index", "UserAccount")><i class="fa fa-tachometer"></i><span>My Admin panel</span></li>
+                <li>
+                    <a href="#"><i class="fa fa-cogs"></i><span>Aeroplane</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                    <ul>
+
+                        <li>@Html.ActionLink("Add Flight", "Create","Aeroplane")</li>
+                        
+                        <li>@Html.ActionLink("View Details", "Index", "Aeroplane")</li>
+                    </ul>
+                </li>
+                <li id="menu-comunicacao">
+                    <a href="#"><i class="fa fa-book nav_icon"></i><span>Flight</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                    <ul id="menu-comunicacao-sub">
+                        <li>@Html.ActionLink("Add", "AdminLogin", "Admin")</li>
+                        <li>@Html.ActionLink("FlightDetails", "", "Details")</li>
+                        
+                    </ul>
+                </li>
+
+                <li id="menu-academico">
+                    <a href="#"><i class="fa fa-file-text"></i><span>Users</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                    <ul id="menu-academico-sub">
+                        <li>@Html.ActionLink("Login", "AdminLogin", "Admin")</li>
+                        
+                    </ul>
+                </li>
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

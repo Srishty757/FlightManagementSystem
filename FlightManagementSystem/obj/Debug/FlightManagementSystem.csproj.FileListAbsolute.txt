@@ -76,10 +76,10 @@ C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\bin\Sys
 C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\bin\Newtonsoft.Json.xml
 C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\bin\Antlr3.Runtime.pdb
 C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\obj\Debug\FlightManagementSystem.csprojAssemblyReference.cache
+C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\obj\Debug\FlightManagementSystem.Migrations.addTable.resources
+C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\obj\Debug\FlightManagementSystem.csproj.GenerateResource.cache
 C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\obj\Debug\FlightManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\obj\Debug\FlightManagementSystem.csproj.CopyComplete
 C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\obj\Debug\FlightManagementSystem.dll
 C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\obj\Debug\FlightManagementSystem.pdb
-C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\obj\Debug\FlightManagementSystem.Migrations.addTable.resources
-C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\obj\Debug\FlightManagementSystem.csproj.GenerateResource.cache
+C:\Users\DELL\source\repos\FlightManagementSystem\FlightManagementSystem\obj\Debug\FlightManagementSystem.csprojAssemblyReference.cache
