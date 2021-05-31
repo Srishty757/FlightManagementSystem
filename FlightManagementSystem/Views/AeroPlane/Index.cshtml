@@ -10,8 +10,6 @@
     <div class="header-left">
         <div class="logo-name">
             <a href="index.html">
-                <h1>Shoppy</h1>
-                <!--<img id="logo" src="" alt="Logo"/>-->
             </a>
         </div>
         <!--search-box-->
@@ -188,47 +186,68 @@
     </p>
 </div>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FlightId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FlightName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SeatingCapacity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
+    <table class="table">
 
-    </tr>
-    
+        <p>
+            Search Name: @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+            <input type="submit" value="Search" />
+        </p>
+
+        <tr>
+            <th>
+                @Html.ActionLink("FlightName", "Index", new { Sorting_Order = ViewBag.SortingName })
+            </th>
+            <th>
+                Flight Name
+            </th>
+            <th>
+                @Html.ActionLink("Price", "Index", new { Sorting_Order = ViewBag.SortingPrice })
+            </th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatingCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+
+        </tr>
 
 
-    @foreach (var item in Model)
-    {
-<tr>
-    <td>
-        @Html.HiddenFor(modelItem => item.FlightId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FlightName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.SeatingCapacity)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Price)
-    </td>
 
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { FlightId = item.FlightId }) |
-        @Html.ActionLink("Details", "Details", new { FlightId = item.FlightId }) |
-        @Html.ActionLink("Delete", "Delete", new { FlightId = item.FlightId })
-    </td>
-</tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.HiddenFor(modelItem => item.FlightId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatingCapacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
 
-</table>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { FlightId = item.FlightId }) |
+                    @Html.ActionLink("Details", "Details", new { FlightId = item.FlightId }) |
+                    @Html.ActionLink("Delete", "Delete", new { FlightId = item.FlightId })
+                </td>
+            </tr>
+        }
+        }
+
+    </table>
+

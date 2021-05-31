@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -11,10 +12,31 @@ namespace FlightManagementSystem.Controllers
         private ContextCS db = new ContextCS();
 
         // GET: AeroPlane
-        public ActionResult Index()
+        public ActionResult Index (string Sorting_Order, string Search_Data)
         {
-
-            return View(db.flightInfos.ToList());
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Name_Description" : "";
+            ViewBag.SortingPrice = Sorting_Order == "Seating_Capacity" ? "Price" : "Price";
+            var flights = from flight in db.flightInfos select flight;
+            {
+                flights = flights.Where(flight => flight.FlightName.ToUpper().Contains(Search_Data.ToUpper()) 
+                );
+            }
+            switch (Sorting_Order)
+            {
+                case "Name_Description":
+                    flights = flights.OrderByDescending(flight => flight.FlightName);
+                    break;
+                case "Seating_Capacity":
+                    flights = flights.OrderByDescending(flight => flight.SeatingCapacity);
+                    break;
+                case "Price":
+                    flights = flights.OrderByDescending(flight => flight.Price);
+                    break;
+                default:
+                    flights = flights.OrderByDescending(flight => flight.FlightName);
+                    break;
+            }
+                    return View(db.flightInfos.ToList());
         }
 
         // GET: AeroPlane/Details/5

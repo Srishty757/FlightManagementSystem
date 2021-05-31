@@ -7,6 +7,7 @@ using FlightManagementSystem.Models;
 
 namespace FlightManagementSystem.Controllers
 {
+    
     public class AdminController : Controller
     {
         ContextCS c = new ContextCS();

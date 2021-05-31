@@ -17,6 +17,7 @@ namespace FlightManagementSystem.Controllers
         // GET: FlightBooking
         public ActionResult Index()
         {
+            
             return View(db.UserAccounts.ToList());
         }
 

@@ -99,52 +99,42 @@
 
 <!--slider menu-->
 <body>
-    <div class="sidebar-menu">
-        <div class="logo">
-            <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#">
-                <span id="logo"></span>
-            </a>
-        </div>
-        <div class="menu">
-            <ul id="menu">
-                <li>@Html.ActionLink("Admin", "Index", "UserAccount")><i class="fa fa-tachometer"></i><span>My Admin panel</span></li>
-                <li>
-                    <a href="#"><i class="fa fa-cogs"></i><span>Aeroplane</span><span class="fa fa-angle-right" style="float: right"></span></a>
-                    <ul>
-
-                        <li>@Html.ActionLink("Add Flight", "Create","Aeroplane")</li>
-                        
-                        <li>@Html.ActionLink("View Details", "Index", "Aeroplane")</li>
-                    </ul>
-                </li>
-                <li id="menu-comunicacao">
-                    <a href="#"><i class="fa fa-book nav_icon"></i><span>Flight</span><span class="fa fa-angle-right" style="float: right"></span></a>
-                    <ul id="menu-comunicacao-sub">
-                        <li>@Html.ActionLink("Add", "AdminLogin", "Admin")</li>
-                        <li>@Html.ActionLink("FlightDetails", "", "Details")</li>
-                        
-                    </ul>
-                </li>
-
-                <li id="menu-academico">
-                    <a href="#"><i class="fa fa-file-text"></i><span>Users</span><span class="fa fa-angle-right" style="float: right"></span></a>
-                    <ul id="menu-academico-sub">
-                        <li>@Html.ActionLink("Login", "AdminLogin", "Admin")</li>
-                        
-                    </ul>
-                </li>
-
-
-
-
-            </ul>
-        </div>
-    </div>
-
-
-
     <div>
         @RenderBody()
+    
+        <div class="sidebar-menu">
+            <div class="menu">
+                <ul id="menu">
+                    <li><i class="fa fa-tachometer"></i>@Html.ActionLink("Admin", "Index", "UserAccount")</li>
+                    <li>
+                        <a href="#"><i class="fa fa-cogs"></i><span>Aeroplane</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul>
+
+                            <li>@Html.ActionLink("Add Flight", "Create", "Aeroplane")</li>
+
+                            <li>@Html.ActionLink("View Details", "Index", "Aeroplane")</li>
+                        </ul>
+                    </li>
+                    <li id="menu-comunicacao">
+                        <a href="#"><i class="fa fa-book nav_icon"></i><span>Flight</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul id="menu-comunicacao-sub">
+                            <li>@Html.ActionLink("Add", "AdminLogin", "Admin")</li>
+                            <li>@Html.ActionLink("FlightDetails", "", "Details")</li>
+
+                        </ul>
+                    </li>
+
+                    <li id="menu-academico">
+                        <a href="#"><i class="fa fa-file-text"></i><span>Users</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul id="menu-academico-sub">
+                            <li>@Html.ActionLink("Login", "AdminLogin", "Admin")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+
     </div>
 </body>
 </html>
